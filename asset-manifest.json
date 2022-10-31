@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/e-shop-react/static/css/main.0af947ea.css",
+    "main.js": "/e-shop-react/static/js/main.318f71a7.js",
+    "static/media/boat.jpg": "/e-shop-react/static/media/boat.5c5c2a2f54f60646ef56.jpg",
+    "index.html": "/e-shop-react/index.html",
+    "main.0af947ea.css.map": "/e-shop-react/static/css/main.0af947ea.css.map",
+    "main.318f71a7.js.map": "/e-shop-react/static/js/main.318f71a7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0af947ea.css",
+    "static/js/main.318f71a7.js"
+  ]
+}
