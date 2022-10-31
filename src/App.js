@@ -20,6 +20,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/product/:id" element={<ProductPage />} />
           <Route path="/searchproduct" element={<SearchProduct />} />
+          <Route path="*" element={<AllProducts />} />
         </Routes>
       </BrowserRouter>
     </div>
