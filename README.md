@@ -10,8 +10,6 @@ Based on the eshop you have already constructed, implement the following:
 
 ## Tasks
 
-​
-
 1. Refactor your code from part I\* in order to make it possible to add a router and the following menu:
    1. Home - redirects to home page
    2. Contact us - link to the contact page
@@ -54,3 +52,25 @@ Based on the eshop you have already constructed, implement the following:
       ​
 
 - If the code from part I is not available that just create a header with menu items and implement the tasks as described here.
+
+### Screenshot
+
+#### Desktop Version
+
+![Desktop Layout](./design/desktop-design.jpg)
+
+## My process
+
+### Built with
+
+- React
+- Material UI
+- JavaScript
+- Semantic HTML5 markup
+- CSS
+- Tailwind CSS
+- Responsive Design
+
+## Author
+
+- Website - [Saad Malik-Github](https://github.com/saadmalik200)
