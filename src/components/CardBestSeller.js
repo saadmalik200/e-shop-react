@@ -15,8 +15,8 @@ export default function MediaCard(props) {
   //   console.log(props.product);
   return (
     <Card
-      className="mt-[5rem] border-2 border-gray-400"
-      sx={{ maxWidth: 345, minHeight: 465 }}
+      className="mt-[2rem] border-2 border-gray-400 "
+      sx={{ minWidth: 345, maxHeight: 465 }}
     >
       <Link to={`/product/${props.product.id}`}>
         <CardMedia

@@ -3,6 +3,7 @@ import { useContext } from "react";
 import Card from "./Card";
 import { HomePageContext } from "./Context";
 import { useEffect } from "react";
+import CardContainer from "./CardContainer";
 // import { data } from "../e-shop-data";
 const AllProducts = () => {
   const { state, dispatch } = useContext(HomePageContext);
@@ -27,10 +28,14 @@ const AllProducts = () => {
   //   console.log(state);
 
   return (
-    <div className="flex flex-wrap flex-row gap-5 ml-5 justify-center">
-      {state.products.map((item, i) => (
-        <Card key={i} id={i} product={item} />
-      ))}
+    <div className="">
+      <CardContainer title="Best Seller" products={state.products} />
+      <CardContainer title="Most Popular" products={state.products} />
+      <div className="flex flex-wrap flex-row gap-5 ml-5 justify-center mt-[1rem]">
+        {state.products.map((item, i) => (
+          <Card key={i} id={i} product={item} />
+        ))}
+      </div>
     </div>
   );
 };

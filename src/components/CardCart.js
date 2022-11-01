@@ -74,43 +74,5 @@ export default function MediaCard(props) {
         </Button>
       </CardActions>
     </Card>
-
-    // <Card className="mt-[8rem]" sx={{ maxWidth: 345 }}>
-    //   <CardMedia
-    //     sx={{ maxWidth: 345, maxHeight: 400 }}
-    //     component="img"
-    //     height="140"
-    //     image={props.product.thumbnail}
-    //     alt="green iguana"
-    //   />
-    //   <CardContent>
-    //     <Typography gutterBottom variant="h5" component="div">
-    //       {props.product.title}
-    //     </Typography>
-    //     <Typography variant="body2" color="text.secondary">
-    //       {" "}
-    //       Price:
-    //       {props.product.price}
-    //     </Typography>
-    //     <Typography variant="body2" color="text.secondary">
-    //       {" "}
-    //       Rating: {props.product.rating}
-    //     </Typography>
-    //   </CardContent>
-    //   <CardActions>
-    //     <Button
-    //       onClick={() =>
-    //         dispatch({
-    //           type: "removeCart",
-    //           payload: { product: props.product, key: props.id },
-    //         })
-    //       }
-    //       variant="contained"
-    //       size="small"
-    //     >
-    //       Remove from Cart
-    //     </Button>
-    //   </CardActions>
-    // </Card>
   );
 }

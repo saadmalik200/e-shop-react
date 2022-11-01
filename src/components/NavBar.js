@@ -91,7 +91,7 @@ function ResponsiveAppBar() {
   const navigate = useNavigate();
   const { state, dispatch } = useContext(HomePageContext);
   const [input, setInput] = useState(state.searchText);
-  console.log(input);
+  // console.log(input);
   return (
     <AppBar position="fixed" style={{ background: "black" }}>
       <Container maxWidth="xl">
@@ -208,15 +208,15 @@ function ResponsiveAppBar() {
             <StyledInputBase
               placeholder="Search…"
               inputProps={{ "aria-label": "search" }}
+              value={state.searchText}
+              onChange={(e) =>
+                dispatch({ type: "search", payload: e.target.value })
+              }
               // value={state.searchText}
-              // onChange={(e) =>
-              //   dispatch({ type: "search", payload: e.target.value })
-              // }
-              value={input}
-              onChange={(e) => {
-                setInput(e.target.value);
-                dispatch({ type: "search", payload: input });
-              }}
+              // onChange={(e) => {
+              //   setInput(e.target.value);
+              //   dispatch({ type: "search", payload: input });
+              // }}
               onKeyUp={(e) => {
                 if (e.key === "Enter") {
                   // dispatch({ type: "search", payload: input });

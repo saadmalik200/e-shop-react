@@ -11,7 +11,7 @@ const SearchProduct = () => {
   );
 
   return (
-    <div className="flex flex-wrap flex-row gap-5 ml-5">
+    <div className="flex flex-wrap flex-row gap-5 ml-5 justify-center mt-10">
       {result.map((item, i) => (
         <Card key={i} product={item} />
       ))}
