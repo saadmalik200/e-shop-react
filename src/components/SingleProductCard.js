@@ -12,20 +12,23 @@ import { Link } from "react-router-dom";
 export default function MediaCard(props) {
   const [counter, setCounter] = React.useState(0);
   const { state, dispatch } = useContext(HomePageContext);
+  const [image, setImage] = React.useState(props.product.thumbnail);
 
-  console.log(props.product);
+  React.useEffect(() => {
+    setImage(props.product.thumbnail);
+  }, [props.product.thumbnail]);
+
+  // console.log(props.product);2
   return (
     <div className=" border-4 py-10 mt-[5rem] w-[90rem] h-[50rem] flex justify-center items-center  gap-[5rem]">
       <div className="flex flex-col justify-center gap-[3rem]">
-        <Link to={`/product/${props.product.id}`}>
-          <CardMedia
-            component="img"
-            // height="140"
-            style={{ objectFit: "contain", maxWidth: "580px" }}
-            image={props.product.thumbnail}
-            className=" border-2 h-[450px]   "
-          />
-        </Link>
+        <CardMedia
+          component="img"
+          // height="140"
+          style={{ objectFit: "contain", maxWidth: "580px" }}
+          image={image}
+          className=" border-2 h-[450px]   "
+        />
         <div className="flex flex-row justify-center gap-5">
           {props.product.images?.map((item, i) => (
             <CardMedia
@@ -35,6 +38,7 @@ export default function MediaCard(props) {
               height="140"
               image={item}
               className=" h-[100px] mt-4  border-gray-300 active:border-red-500 border-4 hover:scale-150 cursor-pointer"
+              onClick={() => setImage(item)}
             />
           ))}
         </div>
@@ -95,7 +99,7 @@ export default function MediaCard(props) {
             Quantity:
             <div className="flex gap-2">
               <button
-                onClick={() => setCounter((prev) => prev - 1)}
+                onClick={() => setCounter((prev) => prev > 0 && prev - 1)}
                 className="border-2 border-gray-500 px-2"
               >
                 -
