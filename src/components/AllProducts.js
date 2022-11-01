@@ -28,14 +28,15 @@ const AllProducts = () => {
   //   console.log(state);
 
   return (
-    <div className="">
+    <div className="pb-10">
       <CardContainer title="Best Seller" products={state.products} />
       <CardContainer title="Most Popular" products={state.products} />
-      <div className="flex flex-wrap flex-row gap-5 ml-5 justify-center mt-[1rem]">
+      <CardContainer title="All Products" products={state.products} />
+      {/* <div className="flex flex-wrap flex-row gap-5 ml-5 justify-center mt-[1rem]">
         {state.products.map((item, i) => (
           <Card key={i} id={i} product={item} />
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
