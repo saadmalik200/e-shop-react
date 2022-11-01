@@ -4,6 +4,7 @@ import Card from "./Card";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import SingleProductCard from "./SingleProductCard";
+import CardMedia from "@mui/material/CardMedia";
 
 const ProductPage = () => {
   const { id } = useParams();
@@ -13,7 +14,7 @@ const ProductPage = () => {
     const getData = async () => {
       const response = await fetch(`https://dummyjson.com/products/${id}`);
       const data = await response.json();
-      //   console.log(data);
+      // console.log(data);
 
       setProduct({ ...data });
     };
