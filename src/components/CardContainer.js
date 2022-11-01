@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import CardBestSeller from "./CardBestSeller";
-import Card from "./Card";
 
 const CardContainer = (props) => {
   const [view, setView] = useState(false);
@@ -53,13 +52,9 @@ const CardContainer = (props) => {
             view ? "flex-wrap" : " overflow-x-auto"
           }   `}
         >
-          {view
-            ? props.products.map((item, i) => (
-                <Card key={i} id={i} product={item} />
-              ))
-            : props.products.map((item, i) => (
-                <CardBestSeller key={i} id={i} product={item} />
-              ))}
+          {props.products.map((item, i) => (
+            <CardBestSeller key={i} id={i} view={view} product={item} />
+          ))}
         </div>
       </div>
     );
