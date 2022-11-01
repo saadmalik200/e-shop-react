@@ -1,14 +1,13 @@
 {
   "files": {
-    "main.css": "/e-shop-react/static/css/main.0af947ea.css",
-    "main.js": "/e-shop-react/static/js/main.83b1a2f9.js",
-    "static/media/boat.jpg": "/e-shop-react/static/media/boat.5c5c2a2f54f60646ef56.jpg",
+    "main.css": "/e-shop-react/static/css/main.f53cf627.css",
+    "main.js": "/e-shop-react/static/js/main.caf21a10.js",
     "index.html": "/e-shop-react/index.html",
-    "main.0af947ea.css.map": "/e-shop-react/static/css/main.0af947ea.css.map",
-    "main.83b1a2f9.js.map": "/e-shop-react/static/js/main.83b1a2f9.js.map"
+    "main.f53cf627.css.map": "/e-shop-react/static/css/main.f53cf627.css.map",
+    "main.caf21a10.js.map": "/e-shop-react/static/js/main.caf21a10.js.map"
   },
   "entrypoints": [
-    "static/css/main.0af947ea.css",
-    "static/js/main.83b1a2f9.js"
+    "static/css/main.f53cf627.css",
+    "static/js/main.caf21a10.js"
   ]
 }
