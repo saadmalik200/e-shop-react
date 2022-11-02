@@ -12,7 +12,7 @@ export default function MediaCard(props) {
   const { state, dispatch } = useContext(HomePageContext);
   // const [counter, setCounter] = useState(1);
 
-  console.log("CardCart Rendering", state.cart);
+  // console.log("CardCart Rendering", state.cart);
   return (
     <div className=" border-4 py-10 mt-[5rem] w-[90rem] h-auto flex flex-col gap-[1rem]">
       <h1 className="text-[3.5rem] pl-5">Your Cart</h1>
@@ -89,7 +89,7 @@ export default function MediaCard(props) {
               }}
             >
               {" "}
-              Price: $ {item.price}.00
+              Price: $ {item.price * state.cart[i].quantity}.00
             </Typography>
 
             <CardActions>
@@ -97,7 +97,7 @@ export default function MediaCard(props) {
                 onClick={() =>
                   dispatch({
                     type: "removeCart",
-                    payload: { product: item, key: props.id },
+                    payload: { product: item, key: i },
                   })
                 }
                 variant="contained"

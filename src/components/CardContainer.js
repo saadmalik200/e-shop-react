@@ -12,7 +12,7 @@ const CardContainer = (props) => {
         <p className=" text-[3rem] pl-4 pt-4">{props.title}</p>
         <div className="flex gap-5 pb-8 overflow-x-auto   ">
           {bestSeller.map((item, i) => (
-            <CardBestSeller key={i} product={item} />
+            <CardBestSeller key={i} id={i} product={item} />
           ))}
         </div>
       </div>
@@ -27,7 +27,7 @@ const CardContainer = (props) => {
         <p className=" text-[3rem] pl-4 pt-4">{props.title}</p>
         <div className="flex gap-5 pb-8 overflow-x-auto   ">
           {bestSeller.map((item, i) => (
-            <CardBestSeller key={i} product={item} />
+            <CardBestSeller key={i} id={i} product={item} />
           ))}
         </div>
       </div>

@@ -60,7 +60,12 @@ export default function MediaCard(props) {
       <CardActions>
         <Button
           className=""
-          onClick={() => dispatch({ type: "addCart", payload: props.product })}
+          onClick={() =>
+            dispatch({
+              type: "addCart",
+              payload: { product: props.product, id: props.id },
+            })
+          }
           variant="contained"
           size="small"
           style={{ margin: " 0 auto" }}

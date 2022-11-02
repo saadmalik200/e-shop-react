@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { HomePageContext } from "./Context";
-import Card from "./Card";
+import Card from "./CardBestSeller";
 
 const SearchProduct = () => {
   const { state } = useContext(HomePageContext);

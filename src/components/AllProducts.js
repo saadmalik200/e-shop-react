@@ -16,29 +16,20 @@ const AllProducts = () => {
 
       const data = await response.json();
 
-      data.products.forEach((item) => (item.quantity = 0));
+      data.products.forEach((item) => (item.quantity = 1));
       // console.log(data.products);
 
       dispatch({ type: "addProducts", payload: data.products });
-
-      //   setProducts([...data.products]);
     };
 
     getData();
   }, []);
-
-  //   console.log(state);
 
   return (
     <div className="pb-10">
       <CardContainer title="Best Seller" products={state.products} />
       <CardContainer title="Most Popular" products={state.products} />
       <CardContainer title="All Products" products={state.products} />
-      {/* <div className="flex flex-wrap flex-row gap-5 ml-5 justify-center mt-[1rem]">
-        {state.products.map((item, i) => (
-          <Card key={i} id={i} product={item} />
-        ))}
-      </div> */}
     </div>
   );
 };
