@@ -7,10 +7,12 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useContext } from "react";
 import { HomePageContext } from "./Context";
-
+import { useState } from "react";
 export default function MediaCard(props) {
   const { state, dispatch } = useContext(HomePageContext);
-  const [counter, setCounter] = React.useState(1);
+  // const [counter, setCounter] = useState(1);
+
+  console.log("CardCart Rendering", state.cart);
   return (
     <div className=" border-4 py-10 mt-[5rem] w-[90rem] h-auto flex flex-col gap-[1rem]">
       <h1 className="text-[3.5rem] pl-5">Your Cart</h1>
@@ -24,6 +26,7 @@ export default function MediaCard(props) {
       ) : (
         state.cart.map((item, i) => (
           <CardContent
+            key={i}
             className="flex justify-between items-center mx-4  border-2"
             style={{
               height: "150px",
@@ -61,14 +64,16 @@ export default function MediaCard(props) {
             <div className="flex justify-center gap-5 mb-[1rem]">
               <div className="flex gap-2">
                 <button
-                  onClick={() => setCounter((prev) => prev > 0 && prev - 1)}
+                  onClick={() => dispatch({ type: "counterMinus", payload: i })}
                   className="border-2 border-gray-500 px-2"
                 >
                   -
                 </button>
-                <p className="border-2 border-gray-500 px-2">{counter}</p>
+                <p className="border-2 border-gray-500 px-2">
+                  {state.cart[i].quantity}
+                </p>
                 <button
-                  onClick={() => setCounter((prev) => prev + 1)}
+                  onClick={() => dispatch({ type: "counterPlus", payload: i })}
                   className="border-2 border-gray-500 px-2"
                 >
                   +
@@ -84,7 +89,7 @@ export default function MediaCard(props) {
               }}
             >
               {" "}
-              Price: $ {item.price * counter}.00
+              Price: $ {item.price}.00
             </Typography>
 
             <CardActions>

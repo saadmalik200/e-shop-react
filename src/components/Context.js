@@ -16,6 +16,7 @@ const HomePageProvider = ({ children }) => {
         return { ...state, products: [...action.payload] };
 
       case "addCart":
+        console.log("Add to Cart", state.cart);
         return { ...state, cart: [...state.cart, action.payload] };
 
       case "removeCart":
@@ -25,6 +26,28 @@ const HomePageProvider = ({ children }) => {
 
       case "search":
         return { ...state, searchText: action.payload };
+
+      case "counterPlus":
+        const oldCartPlus = [...state.cart];
+        console.log(
+          "CounterPlus Before",
+          oldCartPlus[action.payload],
+          oldCartPlus
+        );
+
+        oldCartPlus[action.payload].quantity =
+          oldCartPlus[action.payload].quantity + 1;
+        console.log("After ", oldCartPlus);
+        return { ...state, cart: [...oldCartPlus] };
+      // return { ...state, counter: state.counter + 1 };
+
+      case "counterMinus":
+        const oldCartMinus = [...state.cart];
+        // console.log(action.payload);
+
+        oldCartMinus[action.payload].quantity--;
+        // console.log(oldCartMinus);
+        return { ...state, cart: oldCartMinus };
 
       default:
         return;

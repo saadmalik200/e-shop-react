@@ -15,7 +15,9 @@ const AllProducts = () => {
       );
 
       const data = await response.json();
-      //   console.log(data.products);
+
+      data.products.forEach((item) => (item.quantity = 0));
+      // console.log(data.products);
 
       dispatch({ type: "addProducts", payload: data.products });
 

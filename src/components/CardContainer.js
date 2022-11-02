@@ -34,7 +34,7 @@ const CardContainer = (props) => {
     );
   }
   if (props.title === "All Products") {
-    const bestSeller = props.products.filter((item) => item.price > 800);
+    // const bestSeller = props.products.filter((item) => item.price > 800);
 
     return (
       <div className=" border-4  mt-[2rem] ml-14  ">

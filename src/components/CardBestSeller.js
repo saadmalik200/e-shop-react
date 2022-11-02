@@ -50,8 +50,7 @@ export default function MediaCard(props) {
           color="text.secondary"
         >
           {" "}
-          Price:
-          {props.product.price}
+          Price: ${props.product.price}.00
         </Typography>
         <Typography variant="body2" color="text.secondary">
           {" "}
