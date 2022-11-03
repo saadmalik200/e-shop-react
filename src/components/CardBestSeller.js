@@ -63,7 +63,7 @@ export default function MediaCard(props) {
           onClick={() =>
             dispatch({
               type: "addCart",
-              payload: { product: props.product, id: props.id },
+              payload: { product: props.product, id: props.id, counter: 1 },
             })
           }
           variant="contained"
