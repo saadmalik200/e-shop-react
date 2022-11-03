@@ -23,7 +23,14 @@ const HomePageProvider = ({ children }) => {
         };
 
       case "addCart":
+        const same = state.cart.findIndex(
+          (item) => item.id === action.payload.product.id
+        );
+        console.log("Same", same);
+        // if (state.cart[id].id === action.payload.product.id) {
         if (state.cart.includes(action.payload.product)) {
+          console.log("state cart id", state.cart[0].id);
+          console.log("action payload id", action.payload.product.id);
           const findIndex = state.cart.findIndex(
             (item) => item.id === action.payload.product.id
           );
@@ -34,28 +41,38 @@ const HomePageProvider = ({ children }) => {
             cart: [...state.cart],
           };
         }
-        if (action.payload.counter > 1) {
-          // console.log("id counter is", action.payload.product.id);
 
-          // const findIndex = state.cart.findIndex(
-          //   (item) => item.id === action.payload.id
-          // );
-          // console.log("Index is", findIndex);
-          // console.log(`Counter part`, state.cart);
-          // const oldCart = [...state.cart];
-          // oldCart[action.payload.id].quantity = action.payload.counter;
-          return {
-            ...state,
-            cart: [...state.cart, action.payload.counter],
+        // if (state.cart.includes(action.payload.product)) {
+        //   console.log("state cart id", state.cart[0].id);
+        //   console.log("action payload id", action.payload.product.id);
+        //   const findIndex = state.cart.findIndex(
+        //     (item) => item.id === action.payload.product.id
+        //   );
+
+        //   state.cart[findIndex].quantity = state.cart[findIndex].quantity + 1;
+        //   return {
+        //     ...state,
+        //     cart: [...state.cart],
+        //   };
+        // }
+
+        if (action.payload.counter > 1) {
+          console.log("id counter is", action.payload.product.id);
+          const newProduct = {
+            ...action.payload.product,
+            quantity: action.payload.counter,
           };
+
+          return { ...state, cart: [...state.cart, newProduct] };
         } else {
           return { ...state, cart: [...state.cart, action.payload.product] };
         }
 
       case "removeCart":
-        const newArr = state.cart.splice(action.payload.key, 1);
-        console.log(newArr);
-        return { ...state, cart: [...state.cart, ...newArr] };
+        const oldArr = [...state.cart];
+        oldArr.splice(action.payload.key, 1);
+        // console.log(newArr);
+        return { ...state, cart: [...oldArr] };
 
       case "search":
         return { ...state, searchText: action.payload };

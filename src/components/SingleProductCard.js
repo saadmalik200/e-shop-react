@@ -138,7 +138,11 @@ export default function MediaCard(props) {
                 dispatch({
                   type: "addCart",
                   // payload: props.product,
-                  payload: { product: state.singleProduct, id: 0, counter },
+                  payload: {
+                    product: state.singleProduct,
+                    id: state.singleProduct.id,
+                    counter,
+                  },
                 })
               }
               variant="contained"
