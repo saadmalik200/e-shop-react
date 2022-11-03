@@ -17,6 +17,7 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<AllProducts />} />
+          <Route path="/e-shop-react" element={<AllProducts />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/product/:id" element={<ProductPage />} />
           <Route path="/searchproduct" element={<SearchProduct />} />
