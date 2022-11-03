@@ -96,13 +96,13 @@ function ResponsiveAppBar() {
     <AppBar position="fixed" style={{ background: "black" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Link to="/">
+          <Link to="/e-shop-react">
             <FlightTakeoffIcon
               fontSize="large"
               sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
             />
           </Link>
-          <Link to="/">
+          <Link to="/e-shop-react">
             <Typography
               variant="h6"
               noWrap
@@ -158,13 +158,13 @@ function ResponsiveAppBar() {
             </Menu>
           </Box>
 
-          <Link to="/">
+          <Link to="/e-shop-react">
             <FlightTakeoffIcon
               fontSize="small"
               sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
             />
           </Link>
-          <Link to="/">
+          <Link to="/e-shop-react">
             <Typography
               variant="h5"
               noWrap
