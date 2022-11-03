@@ -13,7 +13,6 @@ const HomePageProvider = ({ children }) => {
   const reducer = (state, action) => {
     switch (action.type) {
       case "addProducts":
-        // console.log("allProducts", state.products);
         return { ...state, products: [...action.payload] };
 
       case "addSingleProduct":
@@ -26,12 +25,8 @@ const HomePageProvider = ({ children }) => {
         const same = state.cart.findIndex(
           (item) => item.id === action.payload.product.id
         );
-        console.log("Same", same);
 
         if (same > -1) {
-          console.log("state cart id", state.cart[0].id);
-          console.log("action payload id", action.payload.product.id);
-
           state.cart[same].quantity =
             state.cart[same].quantity + action.payload.counter;
           return {
@@ -41,10 +36,9 @@ const HomePageProvider = ({ children }) => {
         }
 
         if (action.payload.counter > 1) {
-          console.log("id counter is", action.payload.product.id);
           const newProduct = {
             ...action.payload.product,
-            quantity: state.cart[same].quantity + action.payload.counter,
+            quantity: action.payload.counter,
           };
 
           return { ...state, cart: [...state.cart, newProduct] };
@@ -55,7 +49,6 @@ const HomePageProvider = ({ children }) => {
       case "removeCart":
         const oldArr = [...state.cart];
         oldArr.splice(action.payload.key, 1);
-        // console.log(newArr);
         return { ...state, cart: [...oldArr] };
 
       case "search":
@@ -66,16 +59,12 @@ const HomePageProvider = ({ children }) => {
 
         oldCartPlus[action.payload].quantity =
           oldCartPlus[action.payload].quantity + 1;
-        // console.log("After ", oldCartPlus);
         return { ...state, cart: [...oldCartPlus] };
-      // return { ...state, counter: state.counter + 1 };
 
       case "counterMinus":
         const oldCartMinus = [...state.cart];
-        // console.log(action.payload);
 
         oldCartMinus[action.payload].quantity--;
-        // console.log(oldCartMinus);
         return { ...state, cart: oldCartMinus };
 
       default:
